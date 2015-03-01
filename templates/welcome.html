@@ -1,44 +1,45 @@
-{{ template "base" }}
-
-{{ define "title" }}Welcome{{ end }}
-{{ define "content" }}
-  <div class="row">
+{{define "content"}}
+<div class="row">
+  <div class="col-md-4">
     <a href="http://ken-wong.deviantart.com/art/Mistaken-Identity-105772545">
-        <div class="col-md-4 neuro-img"></div>
+        <div class="neuro-img img-responsive"></div>
     </a>
-    <div class="col-md-4">
-      <h2>Greetings Traveler,</h2>
-      <p>
-        I'm Eric Bower.
-        My hobbies revolve around computer programming,
-        science, math, philosophy, and cycling; not necessarily in that order.
-      </p>
-      <p>
-        I graduated with a bachelor's degree in
-        <a href="http://www.bgsu.edu/arts-and-sciences/neuroscience.html">Neuroscience</a>
-        from <abbr title="Bowling Green State University" class="initialism">BGSU</abbr> in May 2012.
-      </p>
-      <p>
-	All one has to know about me is that I pursue my interests, it's the driving force in my life,
-	and rarely a day goes by without me striving for a consistent sense of ontology.
-      </p>
-      <p>
-        You can find my work on
-        <img src="/static/img/github.png" style="width: 25px; height: 25px;" />
-        <a href="http://github.com/neurosnap">Github</a>,
-	<br />
-	<img src="/static/img/stackoverflow.png" style="width: 20px; height: 20px;" />
-	<a href="http://stackoverflow.com/users/1713216/neurosnap">Stackoverflow</a>, my <a href="/projects">projects page</a>,
-        or view <a href="/static/ericbower_resume_2014_new.pdf">my resume</a>.
-      </p>
-      <p>
-        I'm currently employed as a software developer for the
-	<a href="http://michigan.com">Michigan.com</a>,
-	located in Detroit, Michigan.
-      </p>
-      <p>
-	<a href="https://medium.com/@neurosnap">Wrought Musings</a>
-      </p>
-    </div>
   </div>
-{{ end }}
+  <div class="col-md-4">
+    <div class="page-header">
+      <h2>Greetings Traveler,</h2>
+    </div>
+    <p>
+      My name is Eric Bower.
+      My hobbies revolve around computer programming,
+      science, math, philosophy, and cycling; not necessarily in that order.
+    </p>
+    <p>
+      I graduated with a bachelor's degree in
+      <a href="http://www.bgsu.edu/arts-and-sciences/neuroscience.html">Neuroscience</a>
+      from <abbr title="Bowling Green State University" class="initialism">BGSU</abbr> in May 2012.
+    </p>
+    <p>
+  All one has to know about me is that I pursue my interests, it's the driving force in my life,
+  and rarely a day goes by without me striving for a consistent sense of ontology.
+    </p>
+    <p>
+      You can find my work on
+      <img src="/static/img/github.png" style="width: 25px; height: 25px;" />
+      <a href="http://github.com/neurosnap">Github</a>,
+  <br />
+  <img src="/static/img/stackoverflow.png" style="width: 20px; height: 20px;" />
+  <a href="http://stackoverflow.com/users/1713216/neurosnap">Stackoverflow</a>, my <a href="/projects">projects page</a>,
+      or view <a href="/static/ericbower_resume_2014_new.pdf">my resume</a>.
+    </p>
+    <p>
+      I'm currently employed as a software developer for the
+  <a href="http://michigan.com">Michigan.com</a>,
+  located in Detroit, Michigan.
+    </p>
+    <p>
+  <a href="https://medium.com/@neurosnap">Wrought Musings</a>
+    </p>
+  </div>
+</div>
+{{end}}

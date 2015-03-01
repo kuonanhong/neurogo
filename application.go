@@ -1,31 +1,38 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"html/template"
 	"github.com/julienschmidt/httprouter"
 )
 
-func renderTemplate(w http.ResponseWriter, tmpl string) {
-	t, _ := template.ParseFiles(tmpl)
-	fmt.Println(t)
-	t.Execute(w, nil)
+var base_tmpl = "templates/base.html"
+
+type Page struct {
+	Title string
+}
+
+func render_template(w http.ResponseWriter, tmpl string, p *Page) {
+	t, _ := template.ParseFiles(base_tmpl, tmpl)
+	t.Execute(w, p)
 }
 
 func Welcome(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	renderTemplate(w, "templates/welcome.html")
+	p := &Page{Title: "Welcome"}
+	render_template(w, "templates/welcome.html", p)
 }
 
-func Static(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	http.ServeFile(w, r, r.URL.Path[1:])
+func Projects(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	p := &Page{Title: "Projects"}
+	render_template(w, "templates/projects.html", p)
 }
 
 func main() {
 	router := httprouter.New()
+	router.ServeFiles("/static/*filepath", http.Dir("static"))
 	router.GET("/", Welcome)
-	router.GET("/static", Static)
+	router.GET("/projects", Projects)
 
 	log.Fatal(http.ListenAndServe(":5000", router))
 }
