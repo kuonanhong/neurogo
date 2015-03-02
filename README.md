@@ -30,7 +30,6 @@ Or use gin which will allow automatic building of web app
 
 ```
 go get https://github.com/codegangsta/gin
-gin
 ```
 
 Run
@@ -40,4 +39,10 @@ Run
 ./application
 ```
 
-Navigate to http://localhost:5000/
+Or if using gin
+
+```
+gin
+```
+
+Navigate to http://localhost:3000/
