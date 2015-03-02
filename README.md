@@ -14,9 +14,23 @@ alternative to callback hell (http://elm-lang.org/learn/Escape-from-Callback-Hel
 Build
 -----
 
+Navigate to `src` directory
+
 ```
 go install
+```
+
+Build application
+
+```
 go build application.go
+```
+
+Or use gin which will allow automatic building of web app
+
+```
+go get https://github.com/codegangsta/gin
+gin
 ```
 
 Run

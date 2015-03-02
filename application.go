@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"log"
 	"net/http"
 	"html/template"
@@ -34,5 +35,10 @@ func main() {
 	router.GET("/", Welcome)
 	router.GET("/projects", Projects)
 
-	log.Fatal(http.ListenAndServe(":5000", router))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+
+	log.Fatal(http.ListenAndServe(":" + port, router))
 }
